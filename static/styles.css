@@ -1,0 +1,125 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #7ac6ea, #d7d4d4);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: #000000;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    backdrop-filter: blur(8px);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #222;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+    color: #222;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    color: #333;
+    font-size: 14px;
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+}
+
+input:focus, select:focus {
+    border-color: #0072ff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,114,255,0.2);
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+/* Botón alineado y simétrico */
+.predict-btn {
+    grid-column: span 2;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.predict-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,114,255,0.3);
+}
+
+/* Resultado */
+#result {
+    grid-column: span 2;
+    margin-top: 25px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 12px;
+    background: #f7f7f7;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+/* Colores dinámicos */
+.result-success {
+    color: #0f9d58;
+    background: #e6f4ea;
+    border: 1px solid #b7e0c4;
+}
+
+.result-fail {
+    color: #d93025;
+    background: #fdecea;
+    border: 1px solid #f5c2c0;
+}
+
+/* Responsive */
+@media(max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .predict-btn {
+        grid-column: span 1;
+    }
+
+    .form-container {
+        padding: 25px;
+    }
+}

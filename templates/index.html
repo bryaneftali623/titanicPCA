@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Predicción Titanic</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <div class="glass-card">
+        <h1>🚢 ¿Hubieras sobrevivido al Titanic?</h1>
+        <form id="predictForm" class="form-grid">
+            <div class="form-group">
+                <label>Clase:</label>
+                <select name="Pclass">
+                    <option value="1">Primera</option>
+                    <option value="2">Segunda</option>
+                    <option value="3">Tercera</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Sexo:</label>
+                <select name="Sex">
+                    <option value="male">Hombre</option>
+                    <option value="female">Mujer</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Edad:</label>
+                <input type="number" step="any" name="Age" placeholder="Ej: 25.0" />
+            </div>
+
+            <div class="form-group">
+                <label>Hermanos/Cónyuge:</label>
+                <input type="number" name="SibSp" />
+            </div>
+
+            <div class="form-group">
+                <label>Padres/Hijos:</label>
+                <input type="number" name="Parch" />
+            </div>
+
+            <div class="form-group">
+                <label>Ticket:</label>
+                <input type="text" name="Ticket" placeholder="Ej: 113803" />
+            </div>
+
+            <div class="form-group">
+                <label>Tarifa:</label>
+                <input type="number" step="any" name="Fare" placeholder="Ej: 7.9250" />
+            </div>
+
+            <div class="form-group">
+                <label>Cabina:</label>
+                <input type="text" name="Cabin" placeholder="Ej: Desconocido" />
+            </div>
+
+            <div class="form-group">
+                <label>Embarque:</label>
+                <select name="Embarked">
+                    <option value="S">Southampton</option>
+                    <option value="C">Cherbourg</option>
+                    <option value="Q">Queenstown</option>
+                </select>
+            </div>
+
+            <div class="form-group full-width">
+                <button type="submit" class="predict-btn">Predecir</button>
+            </div>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
