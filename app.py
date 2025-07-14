@@ -8,7 +8,7 @@ app = Flask(__name__)
 model = joblib.load('./modelos/model.pkl')
 pca = joblib.load('./modelos/pca_transform.pkl')
 scaler = joblib.load('./modelos/scaler_t.pkl')
-encoder = joblib.load('./modelos/encoder.pkl')
+encoder = joblib.load('./modelos/encoderN.pkl')
 age_model = joblib.load('./modelos/age_model.pkl')
 
 
